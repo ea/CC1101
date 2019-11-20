@@ -40,6 +40,7 @@ On Oct 22, 2016 10:07 PM, "Simon Monk" <srmonk@gmail.com> wrote:
 #define F_915       0x00
 #define F_433       0x01
 #define F_868       0x02
+#define F_DAP       0x03
 
 // Register values for different frequencies
 // Carrier frequency = 868 MHz
@@ -54,7 +55,10 @@ On Oct 22, 2016 10:07 PM, "Simon Monk" <srmonk@gmail.com> wrote:
 #define F2_433  0x10       
 #define F1_433  0xA7        
 #define F0_433  0x62        
-
+// Carrier frequency DAPNET = 439.9875 MHz
+#define F2_DAP  0x10       
+#define F1_DAP  0xEC        
+#define F0_DAP  0x30        
 
 
 

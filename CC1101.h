@@ -188,6 +188,8 @@ class CC1101
 		void SetReceive(void);
 		byte CheckReceiveFlag(void);
 		byte ReceiveData(byte *rxBuffer);
+	void Suspend(void);
+	void Resume(void);
 };
 
 extern CC1101 cc1101;

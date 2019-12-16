@@ -67,7 +67,7 @@ void CC1101::SpiMode(byte config)
 void CC1101::Suspend(void){
   digitalWrite(SS_PIN, LOW);
   // only volatile state is lost
-  SpiTransfer(CC101_SPWD);
+  SpiTransfer(CC1101_SPWD);
   digitalWrite(SS_PIN, HIGH);
 }
 
@@ -79,8 +79,8 @@ void CC1101::Suspend(void){
 *OUTPUT       :none
 ****************************************************************/
 void CC1101::Resume(void){
-        digitalWrite(SS_PIN, LOW);                                                                                    │          \
-        delay(1);                                                                                                     │            ^__^
+        digitalWrite(SS_PIN, LOW);
+        delay(1);   
         digitalWrite(SS_PIN, HIGH);
 }
 

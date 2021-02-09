@@ -149,7 +149,7 @@ void CC1101::Init(void)
 
 	Reset();	
 									//CC1101 reset
-	//RegConfigSettings(F_433);						//CC1101 register config
+	RegConfigSettings(F_433);						//CC1101 register config
 	SpiWriteBurstReg(CC1101_PATABLE,PaTabel,8);		//CC1101 PATABLE config
 }
 
@@ -167,7 +167,7 @@ void CC1101::Init(byte f)
 	digitalWrite(SCK_PIN, HIGH);
 	digitalWrite(MOSI_PIN, LOW);
 	Reset();										//CC1101 reset
-	//RegConfigSettings(f);							//CC1101 register config
+	RegConfigSettings(f);							//CC1101 register config
 	SpiWriteBurstReg(CC1101_PATABLE,PaTabel,8);		//CC1101 PATABLE config
 }
 
@@ -350,7 +350,7 @@ void CC1101::RegConfigSettings(byte f)
     SpiWriteReg(CC1101_IOCFG0,   0x06);  	//asserts when sync word has been sent/received, and de-asserts at the end of the packet 
     SpiWriteReg(CC1101_PKTCTRL1, 0x04);		//two status bytes will be appended to the payload of the packet,including RSSI LQI and CRC OK
 											//No address check
-    SpiWriteReg(CC1101_PKTCTRL0, 0x05);		//whitening off;CRC Enable£»variable length packets, packet length configured by the first byte after sync word
+    SpiWriteReg(CC1101_PKTCTRL0, 0x05);		//whitening off;CRC EnableÂ£Â»variable length packets, packet length configured by the first byte after sync word
     SpiWriteReg(CC1101_ADDR,     0x00);		//address used for packet filtration.
     SpiWriteReg(CC1101_PKTLEN,   0x3D); 	//61 bytes max length
 }
